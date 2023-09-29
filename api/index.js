@@ -1,9 +1,10 @@
-const express = require('express');
-const app = express();
 const PORT = process.env.PORT || 3001;
+const server = require('./serverConfig');
+const { conn } = require('./db.js'); 
+  
 
-// Configura middleware, rutas y lógica del backend aquí
-
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`);
+conn.sync({ force: false }).then(() => {
+  server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+  });
 });

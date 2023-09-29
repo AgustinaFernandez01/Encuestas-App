@@ -1,10 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from './views/home'
-// import Consult from './views/consult/consult';
-// import Error from './views/error/error';
-// import Survey from './views/survey/survey';
-// import UpdateSurvey from './views/updateSurvey/updateSurvey';
+import Landing from './views/landing/Landing';
+import Home from './views/home/Home';
+import Error from './views/error/Error';
+import Update from './views/updateAnswer/Update';
 
 import NavBar from './components/navBar/navBar'
 
@@ -16,7 +15,10 @@ function App() {
     <>
     <NavBar/>
       <Routes>
-        <Route path='/' element={<Home />}/>
+        <Route path='/' element={<Landing/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/error' element={<Error/>}/>
+        <Route path='/update' element={<Update/>}/>
       </Routes>  
     </>
   );
